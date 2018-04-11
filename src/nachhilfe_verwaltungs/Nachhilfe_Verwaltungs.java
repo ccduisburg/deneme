@@ -46,7 +46,7 @@ public class Nachhilfe_Verwaltungs {
            alleKurse.add(new Kurs("Deutsch"));
            alleKurse.add(new Kurs("English"));
        // Kursvon
-    //    s1.setKurs(Kurs);
+        s1.setKurs(alleKurse);
         
        // System.out.println(Kurs);         
          for(Kurs o:alleKurse){
