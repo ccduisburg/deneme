@@ -1,7 +1,9 @@
 package nachhilfe_verwaltungs;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import nachhilfe_verwaltungs.Kurs;
 
 public class Student extends Person implements Kundigen {
@@ -10,7 +12,7 @@ public class Student extends Person implements Kundigen {
     private String schulKlasse;
     private String schulName;
     private boolean gekundigt = false;
-    public Kurs[] kurse;
+    public ArrayList<Kurs> kurse;
 
     public Student(String name,String vorname,String adress, String geschlescht,String schulName, String schulKlasse) {
         
@@ -66,11 +68,11 @@ public class Student extends Person implements Kundigen {
     return this.name;
     
     }
-    public void setKurs(Kurs[] kurse){
+    public void setKurs( ArrayList<Kurs> kurse){
      this.kurse=kurse;  
      
     }
-   public Kurs[] getKurs() {
+   public ArrayList<Kurs> getKurs() {
         return kurse;
     }
    
