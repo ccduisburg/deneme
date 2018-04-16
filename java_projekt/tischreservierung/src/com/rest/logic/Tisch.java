@@ -28,8 +28,52 @@ public class Tisch {
     /**
      *Ein reservierter Tisch wird ab der Abgabe der Bewertung fre gegeben. 
      */
-    private boolean beleget=false;
+    private boolean belegt=false;
+    /**
+     * hier wird die Anzahl der plätze am Tisch festgelegt.
+     * @param stuehle ist Anzahl der Plätze dieses Tisch
+     */
+    public Tisch(int stuehle){
+    this.plaetze=stuehle;
+    }
+    public int getPlatze(){
+    return plaetze;
     
+    }
+    public double getBewertung(){
+    return bewertung;
+    }
+    public int getTischNr(){
+    return tischNr;
+    }
+    public void setTischNr(int tischNr){
+    this.tischNr=tischNr;
     
+    }
+    public int getAnzahlBewertungen(){
+    return anzahlBewertungen;
+    
+    }
+    public boolean istBelegt(){
+    return belegt;
+    }
+    
+    public void setBelegt(boolean belegt){
+    this.belegt=belegt;
+    
+    }
+    public void bewerten(double bewertung){
+    double temp=this.bewertung*anzahlBewertungen;   
+    temp+=bewertung;
+    this.anzahlBewertungen++;
+    this.bewertung=temp/anzahlBewertungen;
+    //Tisch soll nach Bewertung fre gegeben werden
+    this.belegt=false;
+    }
+    @Override
+    public String toString(){
+    
+    return "Tisch [Plätze: "+this.plaetze+" Bewertung: "+this.bewertung+" Tischnummer: "+this.tischNr+"]";
+            }
     
 }

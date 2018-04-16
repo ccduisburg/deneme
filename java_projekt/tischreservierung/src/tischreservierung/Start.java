@@ -5,6 +5,11 @@
  */
 package tischreservierung;
 
+import com.rest.gui.Konsole;
+import com.rest.logic.BuchungsService;
+import com.rest.model.TischDao;
+import com.rest.model.TischDaoListImpl;
+
 /**
  *
  * @author ckabakci
@@ -16,6 +21,11 @@ public class Start {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        TischDao tischDao= new TischDaoListImpl();
+        BuchungsService bs=new BuchungsService(tischDao);
+        Konsole gui= new Konsole(bs); 
+        
+        
     }
     
 }
