@@ -5,6 +5,7 @@ import nachhilfe_verwaltungs.Lehre;
 import nachhilfe_verwaltungs.Student;
 import java.util.Date;
 import java.time.LocalDate;
+import java.util.List;
 
 public class Kurs {
 
@@ -12,13 +13,12 @@ public class Kurs {
     private String kursName;
     private boolean gekundigt;
     private LocalDate anmeldeDatum;
+    private Lehre lehre;
+    private List<Student> alleStudenten;
 
-    public Kurs(String kursName) {
-        this.kursName = kursName;
+    public Kurs() {
     }
 
-    
-    
     public Kurs(int kursId, String kursName, boolean gekundigt, LocalDate anmeldeDatum) {
         this.kursId = kursId;
         this.kursName = kursName;
@@ -26,7 +26,20 @@ public class Kurs {
         this.anmeldeDatum = anmeldeDatum;
     }
 
-   
+    public Kurs(String kursName) {
+        this.kursName = kursName;
+
+    }
+
+    public void setLehre(Lehre lehre) {
+        this.lehre = lehre;
+
+    }
+
+    public void anmeldung(Student student) {
+        alleStudenten.add(student);
+
+    }
 
     public int getKursId() {
         return kursId;
@@ -43,7 +56,6 @@ public class Kurs {
     public void setKursName(String kursName) {
         this.kursName = kursName;
     }
-        
 
     public boolean getGekundigt() {
         return gekundigt;

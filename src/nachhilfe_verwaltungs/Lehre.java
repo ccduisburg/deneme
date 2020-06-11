@@ -2,6 +2,7 @@ package nachhilfe_verwaltungs;
 
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.List;
 import nachhilfe_verwaltungs.Kundigen;
 
 public class Lehre extends Person implements Kundigen {
@@ -10,8 +11,27 @@ public class Lehre extends Person implements Kundigen {
     private double stLohn;
     private boolean gekundigt;
     private LocalDate anmeldeDatum;
+    public List<Kurs> kurse;
+
+   public Lehre(String name, double stLohn ) {
+      super(name);
+      this.stLohn=stLohn;
+    }
 
     
+    public void setKurs(List<Kurs> kurse){
+     this.kurse=kurse;  
+     
+    }
+   public List<Kurs> getKurs() {
+        return kurse;
+    } 
+     
+    @Override
+    public String toString(){
+    return this.name;
+    
+    }
     @Override
        public void personAnmeldung(LocalDate anmeldeDatum) {
         this.anmeldeDatum = anmeldeDatum;
@@ -52,4 +72,20 @@ public class Lehre extends Person implements Kundigen {
         this.setBeginDatum(beginDatum);
     }
 */
+    
+    public void KursKundigen(Kurs kurs){   
+   this.kurse.remove(kurs);
+   }
+   
+   public void showKurszumLehre(){
+       System.out.println("Lehre Name: "+getName().toString());       
+      
+       for (Kurs K: kurse) {
+           
+       System.out.println("Kurs Name: "+K.getKursName().toString());
+      
+       }
+   }
+    
+    
 }

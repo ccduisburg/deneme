@@ -19,7 +19,7 @@ import nachhilfe_verwaltungs.Menu;
 public class Nachhilfe_Verwaltungs {
     
     
-    //Alt menüler icin ayri haupt menüler icin ayricagirma methodu yazmaliyim.
+    
         
     public static void MenuCall(int wahl) {
  
@@ -108,13 +108,12 @@ public class Nachhilfe_Verwaltungs {
 
          MenuCall(10);                  
         Scanner reader=new Scanner(System.in);
-        
-        
         int auswahl =reader.nextInt();
        // while(auswahl!=10){
             
            //  MenuCall(auswahl);
-                                 
+          
+                       
         switch (auswahl) {
         
        case 1:    {
@@ -149,7 +148,7 @@ public class Nachhilfe_Verwaltungs {
             auswahl =reader.nextInt();
            break;}
        case 10:  {
-           //MenuCall(10);        
+           //MenuCall(auswahl);        
            // reader=new Scanner(System.in);
             //auswahl =reader.nextInt();
            break;
@@ -160,7 +159,7 @@ public class Nachhilfe_Verwaltungs {
               
            
         }
-     //MenuCall(auswahl);
+    
       
      
         }  

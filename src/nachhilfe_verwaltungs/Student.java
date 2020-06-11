@@ -1,7 +1,6 @@
 package nachhilfe_verwaltungs;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import nachhilfe_verwaltungs.Kurs;
@@ -12,7 +11,7 @@ public class Student extends Person implements Kundigen {
     private String schulKlasse;
     private String schulName;
     private boolean gekundigt = false;
-    public ArrayList<Kurs> kurse;
+    public List<Kurs> kurse;
 
     public Student(String name,String vorname,String adress, String geschlescht,String schulName, String schulKlasse) {
         
@@ -54,6 +53,7 @@ public class Student extends Person implements Kundigen {
     @Override
     public void setGekundigt(boolean gekundigt) {
         this.gekundigt = gekundigt;
+        this.kurse=null;
     }
 
     @Override
@@ -68,13 +68,17 @@ public class Student extends Person implements Kundigen {
     return this.name;
     
     }
-    public void setKurs( ArrayList<Kurs> kurse){
+    public void setKurs(List<Kurs> kurse){
      this.kurse=kurse;  
      
     }
-   public ArrayList<Kurs> getKurs() {
+   public List<Kurs> getKurs() {
         return kurse;
     }
+   
+   public void KursKundigen(Kurs kurs){   
+   this.kurse.remove(kurs);
+   }
    
    public void showKursvonSchule(){
        System.out.println("Student Name: "+getName().toString());       
